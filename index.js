@@ -151,7 +151,7 @@ module.exports = function(gulp) {
   });
 
   gulp.task('build-vendor', function() {
-    var stream = gulp.src(mainBowerFiles({filter: '**/*.js'}))
+    var stream = gulp.src(mainBowerFiles({filter: '**/*.js', includeDev: true}))
         .pipe(debug({title: 'Vendor Files (JS):'}))
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest(config.build_dir))
